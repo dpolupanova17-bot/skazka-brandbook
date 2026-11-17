@@ -153,6 +153,8 @@ body.portal-menu-open { overflow: hidden; }
 .portal-menu-panel a:hover,
 .portal-menu-panel a:focus-visible { color: #e6f6fe; transform: translateX(10px); }
 
+.portal-menu-panel a span { min-width: 0; }
+
 .portal-hero {
   position: relative;
   min-height: 100vh;
@@ -670,8 +672,20 @@ body.portal-menu-open { overflow: hidden; }
   .portal-logo img { top: -86px; width: 220px; height: 220px; }
   .portal-menu-panel { padding: 104px 20px 40px; align-items: start; }
   .portal-menu-panel nav { margin-top: 10vh; }
-  .portal-menu-panel a { font-size: clamp(43px, 14vw, 68px); }
-  .portal-menu-panel a::before { width: 28px; margin-right: 12px; vertical-align: .6em; font-size: 9px; }
+  .portal-menu-panel a {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: start;
+    column-gap: 12px;
+    font-size: clamp(39px, 11.8vw, 58px);
+  }
+  .portal-menu-panel a::before {
+    width: auto;
+    margin: .65em 0 0;
+    vertical-align: baseline;
+    font-size: 9px;
+  }
   .portal-hero { padding: 112px 18px 28px !important; }
   .portal-hero h1 { max-width: 760px; font-size: clamp(58px, 18vw, 88px); line-height: .94; }
   .portal-eyebrow { max-width: 270px; font-size: 11px; line-height: 1.45; }
@@ -1620,7 +1634,12 @@ body.portal-menu-open { overflow: hidden; }
   height: auto;
   object-fit: contain;
   transform: translate(-50%, -50%);
+  transition: opacity .08s linear;
 }
+
+#page-home .logo-canvas > img.is-loading,
+#page-home .seasonal-composition.is-loading,
+#page-home .winter-mark-preview img.is-loading { opacity: 0; }
 
 #page-home .logo-missing {
   display: grid;
@@ -3210,7 +3229,7 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .style-graphics .winter-mark-preview,
   #page-home .style-graphics .graphics-gallery .winter-mark-preview {
     width: 100%;
-    height: clamp(180px, 50vw, 215px);
+    height: clamp(168px, 46vw, 195px);
     min-height: 0;
     aspect-ratio: auto;
     padding: 14px;
@@ -3219,10 +3238,10 @@ body.portal-menu-open { overflow: hidden; }
 
   #page-home .style-graphics .winter-mark-preview img,
   #page-home .style-graphics .graphics-gallery .winter-mark-preview img {
-    width: min(78%, 260px);
+    width: min(66%, 220px);
     height: 100%;
-    max-width: 260px;
-    max-height: 188px;
+    max-width: 220px;
+    max-height: 154px;
     object-fit: contain;
   }
 

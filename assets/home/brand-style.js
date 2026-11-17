@@ -157,10 +157,12 @@
     if (!available) {
       logoPreview.hidden = true;
       logoPreview.removeAttribute('src');
+      logoPreview.classList.remove('is-loading');
       return;
     }
 
     logoPreview.hidden = true;
+    logoPreview.classList.add('is-loading');
     const pendingImage = new Image();
     pendingImage.decoding = 'async';
     pendingImage.src = variant.preview;
@@ -169,6 +171,7 @@
       logoPreview.src = variant.preview;
       logoPreview.alt = variant.alt;
       logoPreview.hidden = false;
+      logoPreview.classList.remove('is-loading');
     };
     if (pendingImage.complete) commit();
     else {
@@ -468,6 +471,7 @@
   if (seasonalGraphic && data.graphics.seasonal) {
     const seasonal = data.graphics.seasonal;
     let activeVariant = seasonal.variants[0];
+    let seasonalRenderRequest = 0;
     const preview = create('button', 'seasonal-graphic-preview');
     preview.type = 'button';
     preview.setAttribute('aria-label', `Увеличить сочетание «${seasonal.name}»`);
@@ -497,6 +501,31 @@
     const download = create('a', 'is-primary', 'Скачать PNG');
     download.href = activeVariant.composition;
     download.download = '';
+    seasonal.variants.forEach((variant) => {
+      const preload = new Image();
+      preload.decoding = 'async';
+      preload.src = variant.composition;
+    });
+
+    function renderSeasonalVariant(variant) {
+      const request = ++seasonalRenderRequest;
+      image.classList.add('is-loading');
+      const pendingImage = new Image();
+      pendingImage.decoding = 'async';
+      pendingImage.src = variant.composition;
+      const commit = () => {
+        if (request !== seasonalRenderRequest || activeVariant !== variant) return;
+        image.src = variant.composition;
+        image.alt = seasonal.alt;
+        image.classList.remove('is-loading');
+      };
+      if (pendingImage.complete) commit();
+      else {
+        pendingImage.addEventListener('load', commit, { once: true });
+        pendingImage.addEventListener('error', commit, { once: true });
+      }
+    }
+
     seasonal.variants.forEach((variant, index) => {
       const button = create('button', index === 0 ? 'is-active' : '', variant.name);
       button.type = 'button';
@@ -504,7 +533,7 @@
       button.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
       button.addEventListener('click', () => {
         activeVariant = variant;
-        image.src = variant.composition;
+        renderSeasonalVariant(variant);
         preview.style.background = variant.background;
         download.href = variant.composition;
         switcher.querySelectorAll('button').forEach((item) => {
@@ -524,6 +553,7 @@
   if (winterMarkRoot && data.graphics.seasonal.winterMark) {
     const mark = data.graphics.seasonal.winterMark;
     let activeMark = mark.variants[0];
+    let winterMarkRenderRequest = 0;
     const preview = create('div', 'winter-mark-preview');
     const image = document.createElement('img');
     image.src = activeMark.path;
@@ -538,6 +568,31 @@
     const download = create('a', 'is-primary', 'Скачать PNG');
     download.href = activeMark.path;
     download.download = '';
+    mark.variants.forEach((variant) => {
+      const preload = new Image();
+      preload.decoding = 'async';
+      preload.src = variant.path;
+    });
+
+    function renderWinterMark(variant) {
+      const request = ++winterMarkRenderRequest;
+      image.classList.add('is-loading');
+      const pendingImage = new Image();
+      pendingImage.decoding = 'async';
+      pendingImage.src = variant.path;
+      const commit = () => {
+        if (request !== winterMarkRenderRequest || activeMark !== variant) return;
+        image.src = variant.path;
+        image.alt = mark.name;
+        image.classList.remove('is-loading');
+      };
+      if (pendingImage.complete) commit();
+      else {
+        pendingImage.addEventListener('load', commit, { once: true });
+        pendingImage.addEventListener('error', commit, { once: true });
+      }
+    }
+
     mark.variants.forEach((variant, index) => {
       const button = create('button', index === 0 ? 'is-active' : '', variant.name);
       button.type = 'button';
@@ -545,7 +600,7 @@
       button.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
       button.addEventListener('click', () => {
         activeMark = variant;
-        image.src = variant.path;
+        renderWinterMark(variant);
         preview.style.background = variant.background;
         download.href = variant.path;
         switcher.querySelectorAll('button').forEach((item) => {
