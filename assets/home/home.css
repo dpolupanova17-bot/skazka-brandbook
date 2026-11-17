@@ -3140,6 +3140,126 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .style-graphics .brand-shape-item { min-height: 150px; }
 }
 
+/* Mobile brand-style fixes: stable switchers, compact seasonal cards, no hidden tabs. */
+@media (max-width: 760px) {
+  #page-home .brand-style-section {
+    overflow-x: clip;
+    scroll-margin-top: 96px;
+  }
+
+  #page-home .brand-style-head h2 {
+    max-width: 100%;
+    font-size: clamp(56px, 16vw, 82px);
+    line-height: .82;
+    letter-spacing: -.035em;
+  }
+
+  #page-home .brand-style-nav {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3px;
+    overflow: visible;
+    padding: 4px;
+  }
+
+  #page-home .brand-style-nav a {
+    min-width: 0;
+    min-height: 46px;
+    padding: 0 4px;
+    white-space: nowrap;
+    font-size: clamp(9px, 2.7vw, 12px);
+  }
+
+  #page-home .style-graphics .seasonal-graphic {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #page-home .style-graphics .seasonal-graphic-preview {
+    width: 100%;
+    height: clamp(190px, 54vw, 230px);
+    min-height: 0;
+    padding: 16px;
+  }
+
+  #page-home .style-graphics .seasonal-graphic-preview .seasonal-composition {
+    width: min(92%, 380px);
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  #page-home .style-graphics .seasonal-graphic-copy {
+    padding: 20px;
+  }
+
+  #page-home .style-graphics .seasonal-graphic-copy h4 {
+    margin: 7px 0 10px;
+    font-size: clamp(35px, 10.5vw, 48px);
+  }
+
+  #page-home .style-graphics .seasonal-graphic-actions a {
+    width: auto;
+    min-height: 40px;
+    flex: 0 0 auto;
+  }
+
+  #page-home .style-graphics .winter-mark-switcher {
+    grid-template-rows: auto auto;
+  }
+
+  #page-home .style-graphics .winter-mark-preview,
+  #page-home .style-graphics .graphics-gallery .winter-mark-preview {
+    width: 100%;
+    height: clamp(180px, 50vw, 215px);
+    min-height: 0;
+    aspect-ratio: auto;
+    padding: 14px;
+    overflow: hidden;
+  }
+
+  #page-home .style-graphics .winter-mark-preview img,
+  #page-home .style-graphics .graphics-gallery .winter-mark-preview img {
+    width: min(78%, 260px);
+    height: 100%;
+    max-width: 260px;
+    max-height: 188px;
+    object-fit: contain;
+  }
+
+  #page-home .style-graphics .winter-mark-copy {
+    padding: 16px;
+  }
+
+  #page-home .style-graphics .winter-mark-copy h4 {
+    margin: 6px 0 11px;
+    font-size: clamp(30px, 9vw, 40px);
+  }
+
+  #page-home .style-graphics .winter-mark-controls {
+    gap: 6px;
+  }
+
+  #page-home .style-graphics .winter-mark-controls button {
+    min-height: 34px;
+    padding: 0 11px;
+  }
+
+  #page-home .style-graphics .winter-mark-actions {
+    margin-top: 10px;
+  }
+
+  #page-home .style-graphics .winter-mark-actions a {
+    min-height: 38px;
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 360px) {
+  #page-home .brand-style-shell { width: min(100% - 24px, 1640px); }
+  #page-home .brand-style-nav { gap: 2px; }
+  #page-home .brand-style-nav a { min-height: 42px; padding-inline: 2px; font-size: 9px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   #page-home .brand-style-section *,
   #page-home .brand-style-section *::before,

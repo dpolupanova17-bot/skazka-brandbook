@@ -124,6 +124,8 @@
   const logoGuidelines = section.querySelector('[data-logo-guidelines]');
   const logoButtons = new Map();
   let activeLogo = data.logo.variants[0];
+  let activeLogoBackground = data.logo.backgrounds[0];
+  let logoRenderRequest = 0;
 
   function renderLogoVectors(variant) {
     logoVectorDownloads.replaceChildren();
@@ -137,7 +139,45 @@
     });
   }
 
-  function setLogo(variant, button) {
+  function setLogoBackground(background, button) {
+    if (!background) return;
+    activeLogoBackground = background;
+    logoCanvas.style.backgroundColor = background.color;
+    section.querySelectorAll('[data-logo-background]').forEach((item) => {
+      const active = item === button || item.dataset.logoBackground === background.id;
+      item.classList.toggle('is-active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
+  }
+
+  function renderLogoPreview(variant) {
+    const request = ++logoRenderRequest;
+    const available = Boolean(variant.preview);
+    logoMissing.hidden = available;
+    if (!available) {
+      logoPreview.hidden = true;
+      logoPreview.removeAttribute('src');
+      return;
+    }
+
+    logoPreview.hidden = true;
+    const pendingImage = new Image();
+    pendingImage.decoding = 'async';
+    pendingImage.src = variant.preview;
+    const commit = () => {
+      if (request !== logoRenderRequest || activeLogo.id !== variant.id) return;
+      logoPreview.src = variant.preview;
+      logoPreview.alt = variant.alt;
+      logoPreview.hidden = false;
+    };
+    if (pendingImage.complete) commit();
+    else {
+      pendingImage.addEventListener('load', commit, { once: true });
+      pendingImage.addEventListener('error', commit, { once: true });
+    }
+  }
+
+  function setLogo(variant, button, options = {}) {
     activeLogo = variant;
     logoVariants.querySelectorAll('button').forEach((item) => {
       const active = item === button;
@@ -147,32 +187,20 @@
     logoLabel.textContent = variant.label;
     logoUsage.textContent = variant.usage;
     renderLogoVectors(variant);
-    const available = Boolean(variant.preview);
-    logoPreview.hidden = !available;
-    logoMissing.hidden = available;
+    renderLogoPreview(variant);
     logoPng.hidden = !(variant.downloadPackage || variant.download);
-    if (available) {
-      logoPreview.src = variant.preview;
-      logoPreview.alt = variant.alt;
-    }
     if (variant.downloadPackage || variant.download) {
       logoPng.href = variant.downloadPackage || variant.download;
       logoPng.download = '';
     }
+    if (options.keepBackground) return;
+
     const tone = variant.id.split('-')[1];
-    const currentBackgroundButton = section.querySelector('[data-logo-background].is-active');
-    const currentBackground = currentBackgroundButton
-      ? data.logo.backgrounds.find((item) => item.id === currentBackgroundButton.dataset.logoBackground)
-      : null;
-    if (!currentBackground || currentBackground.logoTone !== tone) {
+    if (!activeLogoBackground || activeLogoBackground.logoTone !== tone) {
       const preferredBackground = data.logo.backgrounds.find((item) => item.logoTone === tone);
       if (preferredBackground) {
-        logoCanvas.style.backgroundColor = preferredBackground.color;
-        section.querySelectorAll('[data-logo-background]').forEach((item) => {
-          const active = item.dataset.logoBackground === preferredBackground.id;
-          item.classList.toggle('is-active', active);
-          item.setAttribute('aria-pressed', String(active));
-        });
+        const preferredButton = section.querySelector(`[data-logo-background="${preferredBackground.id}"]`);
+        setLogoBackground(preferredBackground, preferredButton);
       }
     }
   }
@@ -197,13 +225,8 @@
       if (!background) return;
       const format = activeLogo.id.startsWith('short-') ? 'short' : 'full';
       const pairedVariant = data.logo.variants.find((variant) => variant.id === `${format}-${background.logoTone}`);
-      if (pairedVariant) setLogo(pairedVariant, logoButtons.get(pairedVariant.id));
-      logoCanvas.style.backgroundColor = background.color;
-      section.querySelectorAll('[data-logo-background]').forEach((item) => {
-        const active = item === button;
-        item.classList.toggle('is-active', active);
-        item.setAttribute('aria-pressed', String(active));
-      });
+      setLogoBackground(background, button);
+      if (pairedVariant) setLogo(pairedVariant, logoButtons.get(pairedVariant.id), { keepBackground: true });
     });
   });
 
