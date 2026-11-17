@@ -1,0 +1,17 @@
+.playwright-mcp/
+tmp/
+tools/
+
+# Локальные и промежуточные копии страницы
+index_final.html
+ОТКРЫТЬ_БРЕНДБУК.html
+
+# Технический растр, использованный только для извлечения форм
+assets/brand/graphics/shapes/_source-preview.tif
+
+# Файл превышает лимит GitHub 100 МБ; хранится локально до подключения Git LFS
+ФИРМЕННАЯ ГРАФИКА/ГРАФИКА_и_персонажи.eps
+
+Thumbs.db
+Desktop.ini
+
