@@ -3279,6 +3279,388 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .brand-style-nav a { min-height: 42px; padding-inline: 2px; font-size: 9px; }
 }
 
+/* Brand in the park — compact visual section. */
+#page-home .park-brand-section {
+  --park-zone-extreme: #ff2400;
+  --park-zone-children: #b882d0;
+  --park-zone-theme: #00b453;
+  --park-zone-family: #34b4e8;
+  padding: clamp(82px, 8vw, 132px) 0 clamp(88px, 9vw, 146px);
+  scroll-margin-top: 76px;
+  background: #fff;
+  color: #222;
+}
+
+#page-home .park-brand-shell {
+  width: min(1640px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+#page-home .park-brand-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 30px;
+  align-items: end;
+  margin-bottom: clamp(52px, 6vw, 90px);
+}
+
+#page-home .park-brand-head p {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 0 7px;
+  color: #238fbd;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#page-home .park-brand-head h2 {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin: 0;
+  font: 700 clamp(68px, 8.4vw, 132px)/.82 'Bebas Neue', Arial, sans-serif;
+  letter-spacing: -.035em;
+}
+
+#page-home .park-brand-chapter + .park-brand-chapter {
+  margin-top: clamp(74px, 7vw, 108px);
+  padding-top: clamp(62px, 6vw, 88px);
+  border-top: 1px solid #d7e8ef;
+}
+
+#page-home .park-chapter-head {
+  display: grid;
+  grid-template-columns: minmax(300px, .8fr) minmax(360px, 1.2fr);
+  gap: clamp(34px, 5vw, 82px);
+  align-items: start;
+  margin-bottom: 34px;
+}
+
+#page-home .park-chapter-head h3 {
+  margin: 0;
+  font: 700 clamp(38px, 3.6vw, 58px)/.98 'Bebas Neue', Arial, sans-serif;
+  letter-spacing: -.02em;
+}
+
+#page-home .park-chapter-head h3 span { color: #34b4e8; }
+
+#page-home .park-chapter-head p {
+  max-width: 780px;
+  margin: 0;
+  color: #55616b;
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.58;
+}
+
+#page-home .park-zoning-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.14fr) minmax(360px, .86fr);
+  gap: 14px;
+}
+
+#page-home .park-zone-scheme {
+  min-width: 0;
+  margin: 0;
+  padding: 24px;
+  border-radius: 30px 12px 30px 12px;
+  background: #eaf7fc;
+}
+
+#page-home .park-zone-scheme figcaption {
+  margin-bottom: 18px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+#page-home .park-zone-scheme > p {
+  max-width: 760px;
+  margin: 17px 0 0;
+  color: #60717a;
+  font-size: 13px;
+  line-height: 1.48;
+}
+
+#page-home .park-route-canvas {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  border-radius: 22px 8px 22px 8px;
+  background: #fff;
+}
+
+#page-home .park-route-canvas::before,
+#page-home .park-route-canvas::after {
+  content: '';
+  position: absolute;
+  border: 1px solid #d6e7ed;
+  border-radius: 50%;
+}
+
+#page-home .park-route-canvas::before { width: 300px; height: 300px; left: -120px; bottom: -170px; }
+#page-home .park-route-canvas::after { width: 190px; height: 190px; right: -70px; top: -80px; }
+
+#page-home .park-route-line {
+  position: absolute;
+  left: 16%;
+  top: 49%;
+  width: 65%;
+  border-top: 2px dashed #91b8c6;
+  transform: rotate(-9deg);
+  transform-origin: left center;
+}
+
+#page-home .park-zone-node {
+  --zone: #34b4e8;
+  position: absolute;
+  z-index: 2;
+  min-width: 150px;
+  padding: 11px 14px 11px 43px;
+  border: 1px solid #d5e5eb;
+  border-radius: 14px;
+  background: #fff;
+}
+
+#page-home .park-zone-node i {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border: 5px solid var(--zone);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+#page-home .park-zone-node b,
+#page-home .park-zone-node small { display: block; }
+#page-home .park-zone-node b { font-size: 13px; line-height: 1.2; }
+#page-home .park-zone-node small { margin-top: 4px; color: #718089; font-size: 10px; font-weight: 700; }
+#page-home .zone-family { --zone: var(--park-zone-family); left: 7%; bottom: 15%; }
+#page-home .zone-children { --zone: var(--park-zone-children); left: 28%; top: 18%; }
+#page-home .zone-theme { --zone: var(--park-zone-theme); right: 8%; top: 13%; }
+#page-home .zone-extreme { --zone: var(--park-zone-extreme); right: 16%; bottom: 13%; }
+
+#page-home .park-route-example {
+  position: absolute;
+  z-index: 3;
+  left: 44%;
+  top: 46%;
+  width: min(245px, 42%);
+  padding: 14px 16px;
+  border-radius: 13px;
+  background: var(--park-zone-children);
+  color: #222;
+  transform: translate(-50%, -50%);
+}
+
+#page-home .park-route-example b,
+#page-home .park-route-example small { display: block; }
+#page-home .park-route-example b { font-size: 15px; }
+#page-home .park-route-example small { margin-top: 5px; font-size: 11px; line-height: 1.35; }
+
+#page-home .park-navigation-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+#page-home .park-photo-slot {
+  position: relative;
+  min-width: 0;
+  min-height: 230px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  overflow: hidden;
+  border: 1px solid #bcd8e3;
+  border-radius: 24px 9px 24px 9px;
+  background: #edf7fa;
+  color: #34505d;
+  text-align: left;
+  font-family: 'PT Root UI', Arial, sans-serif;
+  cursor: zoom-in;
+  transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+#page-home .park-photo-slot:hover,
+#page-home .park-photo-slot:focus-visible {
+  border-color: #34b4e8;
+  background: #e1f4fb;
+  transform: translateY(-3px);
+  outline: 3px solid rgba(52, 180, 232, .22);
+  outline-offset: 3px;
+}
+
+#page-home .park-photo-slot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#page-home .park-photo-index {
+  position: absolute;
+  left: 18px;
+  top: 17px;
+  color: #238fbd;
+  font: 700 18px/1 'Bebas Neue', Arial, sans-serif;
+  letter-spacing: .06em;
+}
+
+#page-home .park-photo-add {
+  position: absolute;
+  right: 18px;
+  top: 16px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #9dcbdc;
+  border-radius: 50%;
+  color: #238fbd;
+  font-size: 21px;
+  line-height: 1;
+}
+
+#page-home .park-photo-slot b {
+  position: relative;
+  z-index: 1;
+  max-width: 250px;
+  font-size: 15px;
+  line-height: 1.32;
+}
+
+#page-home .park-photo-slot small {
+  position: relative;
+  z-index: 1;
+  margin-top: 6px;
+  color: #6a7e87;
+  font-size: 11px;
+}
+
+#page-home .park-navigation-photos .park-photo-slot { min-height: 100%; }
+#page-home .park-attraction-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+#page-home .park-attraction-gallery .park-photo-slot { min-height: 260px; }
+
+#page-home .park-uniform-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 10px;
+}
+
+#page-home .park-uniform-gallery .park-photo-slot {
+  grid-column: span 3;
+  min-height: 250px;
+}
+
+#page-home .park-uniform-gallery .park-photo-slot:nth-child(n + 5) { grid-column: span 4; }
+
+.park-photo-dialog {
+  width: min(1040px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 26px;
+  background: #fff;
+  color: #222;
+  box-shadow: 0 30px 90px rgba(18, 49, 63, .28);
+}
+
+.park-photo-dialog::backdrop { background: rgba(20, 38, 47, .72); backdrop-filter: blur(5px); }
+.park-photo-dialog-stage { height: min(66vh, 650px); padding: 18px; background: #eaf7fc; }
+.park-photo-dialog-stage .park-photo-slot { width: 100%; height: 100%; min-height: 0; cursor: default; transform: none; }
+.park-photo-dialog-copy { padding: 22px 72px 24px 26px; }
+.park-photo-dialog-copy h3 { margin: 0; font-size: 22px; }
+.park-photo-dialog-copy p { margin: 7px 0 0; color: #60717a; line-height: 1.45; }
+.park-photo-dialog-close {
+  position: absolute;
+  z-index: 3;
+  right: 16px;
+  top: 16px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #222;
+  font-size: 25px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(18, 49, 63, .14);
+}
+.park-photo-dialog-close:hover,
+.park-photo-dialog-close:focus-visible { background: #34b4e8; outline: 3px solid rgba(52, 180, 232, .25); outline-offset: 3px; }
+
+@media (max-width: 1080px) {
+  #page-home .park-brand-shell { width: min(100% - 40px, 1640px); }
+  #page-home .park-chapter-head { grid-template-columns: 1fr; gap: 16px; }
+  #page-home .park-zoning-layout { grid-template-columns: 1fr; }
+  #page-home .park-navigation-photos .park-photo-slot { min-height: 220px; }
+  #page-home .park-uniform-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  #page-home .park-uniform-gallery .park-photo-slot,
+  #page-home .park-uniform-gallery .park-photo-slot:nth-child(n + 5) { grid-column: auto; min-height: 230px; }
+  #page-home .park-uniform-gallery .park-photo-slot:last-child { grid-column: 2 / span 2; }
+}
+
+@media (max-width: 640px) {
+  #page-home .park-brand-section { padding: 62px 0 74px; scroll-margin-top: 66px; }
+  #page-home .park-brand-shell { width: calc(100% - 24px); }
+  #page-home .park-brand-head { margin-bottom: 48px; }
+  #page-home .park-brand-head h2 { font-size: clamp(58px, 19vw, 84px); line-height: .84; }
+  #page-home .park-brand-head p { font-size: 11px; }
+  #page-home .park-brand-chapter + .park-brand-chapter { margin-top: 58px; padding-top: 48px; }
+  #page-home .park-chapter-head { margin-bottom: 24px; }
+  #page-home .park-chapter-head h3 { font-size: 39px; }
+  #page-home .park-chapter-head p { font-size: 15px; }
+  #page-home .park-zone-scheme { padding: 12px; border-radius: 24px 8px 24px 8px; }
+  #page-home .park-zone-scheme figcaption { padding: 7px 5px 0; }
+  #page-home .park-route-canvas { min-height: 360px; }
+  #page-home .park-zone-node { min-width: 126px; padding: 9px 10px 9px 35px; }
+  #page-home .park-zone-node i { left: 10px; width: 16px; height: 16px; border-width: 4px; }
+  #page-home .park-zone-node b { font-size: 11px; }
+  #page-home .park-zone-node small { font-size: 9px; }
+  #page-home .zone-family { left: 4%; bottom: 8%; }
+  #page-home .zone-children { left: 5%; top: 12%; }
+  #page-home .zone-theme { right: 4%; top: 8%; }
+  #page-home .zone-extreme { right: 4%; bottom: 12%; }
+  #page-home .park-route-example { left: 50%; top: 49%; width: 58%; }
+  #page-home .park-navigation-photos { grid-template-columns: 1fr 1fr; }
+  #page-home .park-navigation-photos .park-photo-slot { min-height: 185px; padding: 16px; }
+  #page-home .park-navigation-photos .park-photo-slot b { font-size: 12px; }
+  #page-home .park-attraction-gallery,
+  #page-home .park-uniform-gallery {
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-template-rows: 1fr;
+    overflow-x: auto;
+    padding: 3px 3px 10px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #9dcbdc transparent;
+  }
+  #page-home .park-attraction-gallery { grid-auto-columns: minmax(245px, 78vw); }
+  #page-home .park-attraction-gallery .park-photo-slot { min-height: 190px; padding: 18px; scroll-snap-align: start; }
+  #page-home .park-attraction-gallery .park-photo-slot:last-child { grid-column: auto; }
+  #page-home .park-uniform-gallery { grid-auto-columns: minmax(154px, 47vw); }
+  #page-home .park-uniform-gallery .park-photo-slot,
+  #page-home .park-uniform-gallery .park-photo-slot:nth-child(n + 5) { grid-column: auto; min-height: 205px; padding: 16px; scroll-snap-align: start; }
+  #page-home .park-uniform-gallery .park-photo-slot:last-child { grid-column: auto; min-height: 205px; }
+  #page-home .park-photo-slot b { font-size: 12px; }
+  .park-photo-dialog { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); border-radius: 18px; }
+  .park-photo-dialog-stage { height: 58vh; padding: 8px; }
+  .park-photo-dialog-copy { padding: 18px 58px 20px 18px; }
+  .park-photo-dialog-copy h3 { font-size: 18px; }
+  .park-photo-dialog-copy p { font-size: 13px; }
+  .park-photo-dialog-close { right: 10px; top: 10px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   #page-home .brand-style-section *,
   #page-home .brand-style-section *::before,
@@ -3287,4 +3669,5 @@ body.portal-menu-open { overflow: hidden; }
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
   }
+  #page-home .park-brand-section * { transition: none !important; }
 }
