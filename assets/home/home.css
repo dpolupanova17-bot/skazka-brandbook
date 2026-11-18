@@ -3684,3 +3684,30 @@ body.portal-menu-open { overflow: hidden; }
     scroll-margin-top: 90px;
   }
 }
+
+/* Soft background rhythm for the two visual-library sections. */
+#page-home .brand-style-section {
+  --style-band: rgba(230, 244, 253, .72);
+}
+
+#page-home .style-logo,
+#page-home .style-graphics {
+  background: var(--style-band);
+  box-shadow: 0 0 0 100vmax var(--style-band);
+  clip-path: inset(0 -100vmax);
+}
+
+#page-home .park-brand-section {
+  background: #e6f4fd;
+}
+
+#page-home .park-attractions {
+  background: #fff;
+  box-shadow: 0 0 0 100vmax #fff;
+  clip-path: inset(0 -100vmax);
+}
+
+#page-home .park-zone-scheme,
+#page-home .park-photo-slot {
+  background: #fff;
+}
