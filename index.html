@@ -8250,16 +8250,32 @@ button.sprint-file {
 
         <div class="park-zoning-layout">
           <figure class="park-zone-scheme">
-            <figcaption>Схема принципа цветового зонирования</figcaption>
-            <div class="park-route-canvas" aria-label="Условная схема четырёх тематических зон парка">
-              <span class="park-route-line" aria-hidden="true"></span>
-              <span class="park-zone-node zone-family"><i></i><b>Семейная</b><small>#34B4E8</small></span>
-              <span class="park-zone-node zone-children"><i></i><b>Детская</b><small>#B882D0</small></span>
-              <span class="park-zone-node zone-theme"><i></i><b>Тематические парки</b><small>#00B453</small></span>
-              <span class="park-zone-node zone-extreme"><i></i><b>Экстрим</b><small>#FF2400</small></span>
-              <span class="park-route-example"><b>Детская зона</b><small>фиолетовая зона → фиолетовый указатель</small></span>
-            </div>
-            <p>Цвета тематических зон — отдельная функциональная система и не относятся к основной фирменной палитре бренда.</p>
+            <figcaption><span>Карта парка и зоны преобладания</span><a href="https://parkskazka.com/o-parke/shema-parka/" target="_blank" rel="noopener">Официальная карта 2026 ↗</a></figcaption>
+            <button type="button" class="park-map-trigger" data-park-photo data-preview-class="park-map-preview" data-photo-title="Карта парка · цветовое зонирование" data-photo-note="Контуры показывают преобладающее расположение объектов каждой группы по данным официальной карты. Отдельные аттракционы могут находиться за пределами контура." aria-label="Открыть увеличенную карту парка с цветовым зонированием">
+              <span class="park-map-stage">
+                <img src="assets/brand/park/park-map-2026.jpg" width="1905" height="1009" alt="Официальная карта парка «Сказка» 2026 года" loading="lazy" decoding="async">
+                <svg class="park-map-overlay" viewBox="0 0 1905 1009" aria-hidden="true">
+                  <path class="park-zone-outline park-map-family" d="M390 230 C610 145 1040 135 1320 240 C1450 330 1425 535 1270 625 C1035 710 680 675 485 565 C340 480 295 325 390 230 Z"></path>
+                  <path class="park-zone-outline park-map-children" d="M760 250 C925 185 1215 225 1370 360 C1465 475 1390 650 1235 705 C1040 760 815 675 730 545 C655 425 660 305 760 250 Z"></path>
+                  <path class="park-zone-outline park-map-theme" d="M1240 70 C1450 15 1745 55 1830 180 C1910 330 1845 555 1715 675 C1555 730 1375 650 1285 510 C1200 365 1170 180 1240 70 Z"></path>
+                  <path class="park-zone-outline park-map-extreme" d="M70 280 C250 215 525 250 680 390 C755 520 665 690 520 760 C320 825 105 730 50 540 C20 430 10 340 70 280 Z M430 600 C655 520 965 565 1150 705 C1230 825 1145 950 970 990 C720 1010 475 930 390 810 C350 730 360 650 430 600 Z M1370 610 C1510 540 1745 575 1870 690 C1930 805 1845 940 1670 965 C1505 980 1360 900 1330 800 C1300 710 1310 650 1370 610 Z"></path>
+
+                  <g class="park-zone-tag park-map-family" transform="translate(690 170)"><rect width="196" height="54" rx="18"></rect><text x="98" y="35" text-anchor="middle">Семейная</text></g>
+                  <g class="park-zone-tag park-map-children" transform="translate(1020 455)"><rect width="184" height="54" rx="18"></rect><text x="92" y="35" text-anchor="middle">Детская</text></g>
+                  <g class="park-zone-tag park-map-theme" transform="translate(1450 98)"><rect width="290" height="54" rx="18"></rect><text x="145" y="35" text-anchor="middle">Тематические парки</text></g>
+                  <g class="park-zone-tag park-map-extreme" transform="translate(135 420)"><rect width="170" height="54" rx="18"></rect><text x="85" y="35" text-anchor="middle">Экстрим</text></g>
+                  <g class="park-zone-tag park-map-extreme" transform="translate(1530 750)"><rect width="170" height="54" rx="18"></rect><text x="85" y="35" text-anchor="middle">Экстрим</text></g>
+                </svg>
+                <span class="park-map-zoom" aria-hidden="true">＋</span>
+              </span>
+            </button>
+            <ul class="park-map-legend" aria-label="Цвета тематических зон">
+              <li style="--zone: #34B4E8"><i></i><span>Семейная</span><small>#34B4E8</small></li>
+              <li style="--zone: #B882D0"><i></i><span>Детская</span><small>#B882D0</small></li>
+              <li style="--zone: #FF2400"><i></i><span>Экстрим</span><small>#FF2400</small></li>
+              <li style="--zone: #00B453"><i></i><span>Тематические парки</span><small>#00B453</small></li>
+            </ul>
+            <p>Контуры показывают зоны преобладания по расположению объектов на официальной карте; отдельные аттракционы разных категорий могут находиться за их пределами. Цвета зон не относятся к основной фирменной палитре бренда.</p>
           </figure>
 
           <div class="park-navigation-photos" aria-label="Места для фотографий навигации">

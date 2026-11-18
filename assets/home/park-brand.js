@@ -17,7 +17,7 @@
     trigger.addEventListener('click', () => {
       returnFocus = trigger;
       const preview = document.createElement('div');
-      preview.className = 'park-photo-slot';
+      preview.className = trigger.dataset.previewClass || 'park-photo-slot';
       preview.innerHTML = trigger.innerHTML;
       stage.replaceChildren(preview);
       title.textContent = trigger.dataset.photoTitle || 'Увеличенный просмотр';
