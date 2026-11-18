@@ -3671,3 +3671,16 @@ body.portal-menu-open { overflow: hidden; }
   }
   #page-home .park-brand-section * { transition: none !important; }
 }
+
+/* Keep menu anchor landings clear of the fixed portal navigation. */
+#page-home #home-about,
+#page-home #approved-materials {
+  scroll-margin-top: 114px;
+}
+
+@media (max-width: 640px) {
+  #page-home #home-about,
+  #page-home #approved-materials {
+    scroll-margin-top: 90px;
+  }
+}
