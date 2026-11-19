@@ -20,5 +20,7 @@
 
 Кнопка `[data-media-library-link]` намеренно не содержит `href`. После выбора способа размещения добавьте локальный или внешний URL, удалите класс `is-disabled`, атрибуты `aria-disabled` и `tabindex`; для внешнего хранилища также добавьте `target="_blank" rel="noopener"`.
 
-Карточки медиакитов находятся в элементах `[data-media-kit]`. Для подключения материалов замените содержимое `[data-media-kit-cover]` на `<img src="..." alt="..." loading="lazy">`, а неактивные кнопки `[data-media-kit-view]` и `[data-media-kit-download]` — на ссылки с URL просмотра и скачивания PDF. Структуру карточек и сетку менять не требуется.
+Карточки медиакитов находятся в элементах `[data-media-kit]`. Все три материала подключены как реальные файлы в `assets/media-kits`: `general-media-kit.pdf`, `winter-media-kit.pdf` и `filming-media-kit.pdf`. Обложки лежат рядом в одноимённых JPG-файлах.
+
+Для обновления медиакита можно сохранить новую версию PDF и обложки по тем же путям либо изменить `src` внутри `[data-media-kit-cover]` и `href` ссылок `[data-media-kit-view]` и `[data-media-kit-download]`. Структуру карточек и сетку менять не требуется.
 
