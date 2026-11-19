@@ -642,6 +642,14 @@
 
   const navLinks = [...section.querySelectorAll('.brand-style-nav a')];
   const chapters = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  const portalNav = document.getElementById('portal-nav');
+  let previousScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    if (currentScrollY < previousScrollY - 8) portalNav?.classList.remove('is-section-jump-hidden');
+    previousScrollY = currentScrollY;
+  }, { passive: true });
   if ('IntersectionObserver' in window) {
     const chapterObserver = new IntersectionObserver((entries) => {
       const visible = entries
@@ -662,6 +670,9 @@
     const target = document.querySelector(link.getAttribute('href'));
     if (!target) return;
     event.preventDefault();
+    if (window.matchMedia('(min-width: 761px)').matches && ['style-colors', 'style-graphics'].includes(target.id)) {
+      portalNav?.classList.add('is-section-jump-hidden');
+    }
     target.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
   }));
 
@@ -669,6 +680,7 @@
     const sectionHead = section.querySelector('.brand-style-head');
     if (!sectionHead) return;
     event.preventDefault();
+    portalNav?.classList.remove('is-section-jump-hidden');
     sectionHead.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
   }));
 })();
