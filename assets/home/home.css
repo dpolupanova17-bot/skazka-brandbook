@@ -3299,7 +3299,7 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .brand-style-nav a { min-height: 42px; padding-inline: 2px; font-size: 9px; }
 }
 
-/* Brand in the park — compact visual section. */
+/* Brand in life — compact visual section. */
 #page-home .park-brand-section {
   --park-zone-extreme: #ff2400;
   --park-zone-children: #b882d0;
@@ -3536,6 +3536,34 @@ body.portal-menu-open { overflow: hidden; }
 
 #page-home .park-uniform-gallery .park-photo-slot:nth-child(n + 5) { grid-column: span 4; }
 
+#page-home .park-communications-groups {
+  display: grid;
+  gap: 26px;
+}
+
+#page-home .park-communications-group h4 {
+  margin: 0 0 12px;
+  color: #238fbd;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+#page-home .park-communications-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+#page-home .park-communication-slot {
+  min-height: 0;
+  aspect-ratio: 16 / 10;
+  padding: 20px;
+}
+
+#page-home .park-communication-slot b { max-width: 210px; }
+
 .park-photo-dialog {
   width: min(1040px, calc(100vw - 32px));
   max-height: calc(100dvh - 32px);
@@ -3583,6 +3611,8 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .park-uniform-gallery .park-photo-slot,
   #page-home .park-uniform-gallery .park-photo-slot:nth-child(n + 5) { grid-column: auto; min-height: 230px; }
   #page-home .park-uniform-gallery .park-photo-slot:last-child { grid-column: 2 / span 2; }
+  #page-home .park-communications-groups { gap: 22px; }
+  #page-home .park-communications-gallery { gap: 10px; }
 }
 
 @media (max-width: 640px) {
@@ -3618,6 +3648,13 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .park-uniform-gallery .park-photo-slot,
   #page-home .park-uniform-gallery .park-photo-slot:nth-child(n + 5) { grid-column: auto; min-height: 205px; padding: 16px; scroll-snap-align: start; }
   #page-home .park-uniform-gallery .park-photo-slot:last-child { grid-column: auto; min-height: 205px; }
+  #page-home .park-communications-groups { gap: 20px; }
+  #page-home .park-communications-group h4 { margin-bottom: 9px; }
+  #page-home .park-communications-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  #page-home .park-communication-slot { min-height: 0; padding: 14px; }
+  #page-home .park-communication-slot b { max-width: 120px; font-size: 11px; }
+  #page-home .park-communication-slot .park-photo-index { left: 13px; top: 13px; font-size: 16px; }
+  #page-home .park-communication-slot .park-photo-add { right: 12px; top: 11px; width: 28px; height: 28px; font-size: 18px; }
   #page-home .park-photo-slot b { font-size: 12px; }
   .park-photo-dialog { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); border-radius: 18px; }
   .park-photo-dialog-stage { height: 58vh; padding: 8px; }
