@@ -33,7 +33,7 @@ body.portal-menu-open { overflow: hidden; }
   padding: 18px clamp(22px, 4vw, 72px);
   color: #fff;
   background: transparent;
-  transition: min-height .3s ease, padding .3s ease, background-color .3s ease, backdrop-filter .3s ease, transform .28s ease;
+  transition: min-height .3s ease, padding .3s ease, background-color .3s ease, backdrop-filter .3s ease;
 }
 
 .portal-nav.is-scrolled {
@@ -43,10 +43,6 @@ body.portal-menu-open { overflow: hidden; }
   background: rgba(52, 180, 232, .94);
   backdrop-filter: blur(18px);
   box-shadow: 0 8px 30px rgba(52, 180, 232, .24) !important;
-}
-
-.portal-nav.is-section-jump-hidden {
-  transform: translateY(-100%);
 }
 
 .portal-menu-button,
@@ -2678,7 +2674,7 @@ body.portal-menu-open { overflow: hidden; }
 @media (min-width: 761px) {
   #page-home #style-colors,
   #page-home #style-graphics {
-    scroll-margin-top: 0;
+    scroll-margin-top: 98px;
     padding-top: 28px;
   }
 }
