@@ -3878,10 +3878,226 @@ body.portal-menu-open { overflow: hidden; }
   cursor: not-allowed;
 }
 
+#page-home .media-kits {
+  margin-top: clamp(42px, 4vw, 64px);
+  padding-top: clamp(30px, 3vw, 44px);
+  border-top: 1px solid #d5e8f0;
+}
+
+#page-home .media-kits-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 20px;
+}
+
+#page-home .media-kits-head p {
+  margin: 0 0 6px;
+  color: #238fbd;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+#page-home .media-kits-head h3 {
+  margin: 0;
+  color: #222;
+  font: 700 clamp(40px, 4vw, 58px)/.9 'Bebas Neue', Arial, sans-serif;
+  letter-spacing: -.015em;
+}
+
+#page-home .media-kits-head > small {
+  max-width: 380px;
+  color: #6a7e87;
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: right;
+}
+
+#page-home .media-kit-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+#page-home .media-kit-card {
+  --kit-accent: #34b4e8;
+  --kit-soft: #e6f4fd;
+  min-width: 0;
+  min-height: 220px;
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid #c8e1eb;
+  border-radius: 26px 10px 26px 10px;
+  background: #fbfdfe;
+}
+
+#page-home .media-kit-card-winter {
+  --kit-accent: #d32d6b;
+  --kit-soft: #fff0f6;
+}
+
+#page-home .media-kit-cover {
+  position: relative;
+  min-height: 100%;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(255,255,255,.76), rgba(255,255,255,.1)), var(--kit-soft);
+  color: #253c49;
+}
+
+#page-home .media-kit-cover::before,
+#page-home .media-kit-cover::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+
+#page-home .media-kit-cover::before {
+  width: 130px;
+  height: 130px;
+  right: -58px;
+  top: -44px;
+  border: 24px solid color-mix(in srgb, var(--kit-accent) 18%, transparent);
+  border-radius: 50%;
+}
+
+#page-home .media-kit-cover::after {
+  inset: 12px;
+  border: 1px solid color-mix(in srgb, var(--kit-accent) 34%, transparent);
+  border-radius: 17px 6px 17px 6px;
+}
+
+#page-home .media-kit-cover > img {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#page-home .media-kit-cover span,
+#page-home .media-kit-cover b,
+#page-home .media-kit-cover small {
+  position: relative;
+  z-index: 1;
+}
+
+#page-home .media-kit-cover span {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  color: var(--kit-accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+#page-home .media-kit-cover b {
+  font: 700 25px/.94 'Bebas Neue', Arial, sans-serif;
+}
+
+#page-home .media-kit-cover small {
+  margin-top: 7px;
+  color: #617681;
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+#page-home .media-kit-body {
+  min-width: 0;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+#page-home .media-kit-body > p {
+  margin: 0;
+  color: var(--kit-accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+#page-home .media-kit-body h4 {
+  margin: 9px 0 7px;
+  color: #222;
+  font-size: 23px;
+  line-height: 1.08;
+}
+
+#page-home .media-kit-description {
+  max-width: 440px;
+  color: #526770;
+  font-size: 13px;
+  line-height: 1.42;
+}
+
+#page-home .media-kit-body > small {
+  margin-top: 8px;
+  color: #829198;
+  font-size: 10px;
+}
+
+#page-home .media-kit-actions {
+  margin-top: auto;
+  padding-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+#page-home .media-kit-actions :is(a, button) {
+  min-height: 42px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--kit-accent);
+  border-radius: 14px 5px 14px 5px;
+  background: var(--kit-accent);
+  color: #17233d;
+  font-family: 'PT Root UI', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#page-home .media-kit-actions :is(a, button):last-child {
+  background: transparent;
+  color: #37525f;
+}
+
+#page-home .media-kit-actions button[disabled] {
+  border-color: #c7d7de;
+  background: #dce8ed;
+  color: #7c8b92;
+  cursor: not-allowed;
+}
+
+#page-home .media-kit-actions button[disabled]:last-child { background: transparent; }
+
+#page-home .media-kit-actions a:hover,
+#page-home .media-kit-actions a:focus-visible {
+  transform: translateY(-2px);
+  outline: 3px solid color-mix(in srgb, var(--kit-accent) 24%, transparent);
+  outline-offset: 3px;
+}
+
 @media (max-width: 980px) {
   #page-home .media-shell { width: min(100% - 40px, 1640px); }
   #page-home .media-head { grid-template-columns: 1fr; gap: 24px; }
   #page-home .media-gallery { min-height: 390px; }
+  #page-home .media-kit-card { grid-template-columns: 138px minmax(0, 1fr); }
 }
 
 @media (max-width: 640px) {
@@ -3911,6 +4127,22 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .media-frame-lead .media-placeholder i { width: 40px; height: 31px; }
   #page-home .media-actions { align-items: stretch; flex-direction: column; gap: 16px; margin-top: 18px; }
   #page-home .media-library-cta { width: 100%; min-height: 56px; }
+  #page-home .media-kits { margin-top: 44px; padding-top: 30px; }
+  #page-home .media-kits-head { align-items: flex-start; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  #page-home .media-kits-head h3 { font-size: 44px; }
+  #page-home .media-kits-head > small { max-width: 290px; text-align: left; }
+  #page-home .media-kit-list { grid-template-columns: 1fr; gap: 10px; }
+  #page-home .media-kit-card { min-height: 210px; grid-template-columns: 112px minmax(0, 1fr); border-radius: 20px 7px 20px 7px; }
+  #page-home .media-kit-cover { padding: 14px; }
+  #page-home .media-kit-cover::after { inset: 8px; border-radius: 13px 5px 13px 5px; }
+  #page-home .media-kit-cover span { left: 14px; top: 14px; font-size: 9px; }
+  #page-home .media-kit-cover b { font-size: 20px; }
+  #page-home .media-kit-cover small { font-size: 8px; }
+  #page-home .media-kit-body { padding: 17px 14px; }
+  #page-home .media-kit-body h4 { margin-top: 7px; font-size: 20px; }
+  #page-home .media-kit-description { font-size: 12px; }
+  #page-home .media-kit-actions { padding-top: 13px; gap: 6px; }
+  #page-home .media-kit-actions :is(a, button) { min-height: 40px; padding: 0 8px; font-size: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
