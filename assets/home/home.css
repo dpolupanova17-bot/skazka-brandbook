@@ -3355,23 +3355,18 @@ body.portal-menu-open { overflow: hidden; }
 
 #page-home .park-zoning-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(280px, .5fr);
+  grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
   gap: 14px;
 }
 
-#page-home .park-zone-scheme {
+#page-home .park-zone-system {
   min-width: 0;
-  margin: 0;
   padding: 24px;
   border-radius: 30px 12px 30px 12px;
-  background: #eaf7fc;
+  background: #fff;
 }
 
-#page-home .park-zone-scheme figcaption {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
+#page-home .park-zone-label {
   margin-bottom: 18px;
   font-size: 12px;
   font-weight: 800;
@@ -3379,236 +3374,46 @@ body.portal-menu-open { overflow: hidden; }
   text-transform: uppercase;
 }
 
-#page-home .park-zone-scheme figcaption a {
-  flex: 0 0 auto;
-  color: #238fbd;
-  font-size: 10px;
-  letter-spacing: .04em;
-  text-decoration: none;
-}
-
-#page-home .park-zone-scheme figcaption a:hover,
-#page-home .park-zone-scheme figcaption a:focus-visible { text-decoration: underline; }
-
-#page-home .park-zone-scheme > p {
-  max-width: 760px;
-  margin: 17px 0 0;
-  color: #60717a;
-  font-size: 13px;
-  line-height: 1.48;
-}
-
-#page-home .park-map-trigger {
-  display: block;
-  width: 100%;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  border-radius: 22px 8px 22px 8px;
-  background: #dff2fa;
-  color: #222;
-  text-align: left;
-  cursor: zoom-in;
-}
-
-#page-home .park-map-stage {
-  position: relative;
-  display: block;
-  aspect-ratio: 1905 / 1009;
-  overflow: hidden;
-}
-
-#page-home .park-map-stage > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-#page-home .park-map-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-#page-home .park-map-family { --map-zone: var(--park-zone-family); }
-#page-home .park-map-children { --map-zone: var(--park-zone-children); }
-#page-home .park-map-theme { --map-zone: var(--park-zone-theme); }
-#page-home .park-map-extreme { --map-zone: var(--park-zone-extreme); }
-
-#page-home .park-zone-outline {
-  fill: var(--map-zone);
-  fill-opacity: .1;
-  stroke: var(--map-zone);
-  stroke-width: 7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
-}
-
-#page-home .park-zone-tag rect {
-  fill: rgba(255, 255, 255, .92);
-  stroke: var(--map-zone);
-  stroke-width: 3;
-  vector-effect: non-scaling-stroke;
-}
-
-#page-home .park-zone-tag text {
-  fill: #222;
-  font: 700 25px/1 'PT Root UI', Arial, sans-serif;
-}
-
-#page-home .park-map-zoom {
-  position: absolute;
-  z-index: 3;
-  right: 14px;
-  top: 14px;
-  width: 40px;
-  height: 40px;
+#page-home .park-zone-palette {
   display: grid;
-  place-items: center;
-  border: 1px solid rgba(35, 143, 189, .45);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, .9);
-  color: #238fbd;
-  font-size: 22px;
-  box-shadow: 0 6px 18px rgba(35, 143, 189, .14);
-}
-
-#page-home .park-map-trigger:hover .park-map-stage > img,
-#page-home .park-map-trigger:focus-visible .park-map-stage > img { transform: scale(1.012); }
-
-#page-home .park-map-stage > img { transition: transform .25s ease; }
-
-#page-home .park-map-trigger:focus-visible {
-  outline: 3px solid rgba(52, 180, 232, .38);
-  outline-offset: 4px;
-}
-
-#page-home .park-map-legend {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  margin: 14px 0 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
-#page-home .park-map-legend li {
+#page-home .park-zone-palette li {
   min-width: 0;
   display: grid;
-  grid-template-columns: 14px minmax(0, 1fr);
-  gap: 3px 8px;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 12px;
   align-items: center;
-  padding: 9px 10px;
+  padding: 13px;
   border: 1px solid #d4e5ec;
-  border-radius: 13px;
-  background: rgba(255, 255, 255, .82);
+  border-radius: 16px;
+  background: #f7fbfd;
 }
 
-#page-home .park-map-legend i {
-  grid-row: 1 / span 2;
-  width: 14px;
-  height: 14px;
-  border: 4px solid var(--zone);
-  border-radius: 50%;
+#page-home .park-zone-palette i {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px 5px 14px 5px;
+  background: var(--zone);
 }
 
-#page-home .park-map-legend span {
-  min-width: 0;
-  overflow: hidden;
-  font-size: 11px;
-  font-weight: 800;
-  line-height: 1.15;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+#page-home .park-zone-palette b,
+#page-home .park-zone-palette small { display: block; }
+#page-home .park-zone-palette b { font-size: 14px; line-height: 1.2; }
+#page-home .park-zone-palette small { margin-top: 5px; color: #6a7e87; font-size: 11px; font-weight: 700; }
+
+#page-home .park-zone-note {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: #60717a;
+  font-size: 13px;
+  line-height: 1.48;
 }
-
-#page-home .park-map-legend small {
-  color: #718089;
-  font-size: 9px;
-  font-weight: 700;
-}
-
-#page-home .park-route-canvas {
-  position: relative;
-  min-height: 390px;
-  overflow: hidden;
-  border-radius: 22px 8px 22px 8px;
-  background: #fff;
-}
-
-#page-home .park-route-canvas::before,
-#page-home .park-route-canvas::after {
-  content: '';
-  position: absolute;
-  border: 1px solid #d6e7ed;
-  border-radius: 50%;
-}
-
-#page-home .park-route-canvas::before { width: 300px; height: 300px; left: -120px; bottom: -170px; }
-#page-home .park-route-canvas::after { width: 190px; height: 190px; right: -70px; top: -80px; }
-
-#page-home .park-route-line {
-  position: absolute;
-  left: 16%;
-  top: 49%;
-  width: 65%;
-  border-top: 2px dashed #91b8c6;
-  transform: rotate(-9deg);
-  transform-origin: left center;
-}
-
-#page-home .park-zone-node {
-  --zone: #34b4e8;
-  position: absolute;
-  z-index: 2;
-  min-width: 150px;
-  padding: 11px 14px 11px 43px;
-  border: 1px solid #d5e5eb;
-  border-radius: 14px;
-  background: #fff;
-}
-
-#page-home .park-zone-node i {
-  position: absolute;
-  left: 13px;
-  top: 50%;
-  width: 18px;
-  height: 18px;
-  border: 5px solid var(--zone);
-  border-radius: 50%;
-  transform: translateY(-50%);
-}
-
-#page-home .park-zone-node b,
-#page-home .park-zone-node small { display: block; }
-#page-home .park-zone-node b { font-size: 13px; line-height: 1.2; }
-#page-home .park-zone-node small { margin-top: 4px; color: #718089; font-size: 10px; font-weight: 700; }
-#page-home .zone-family { --zone: var(--park-zone-family); left: 7%; bottom: 15%; }
-#page-home .zone-children { --zone: var(--park-zone-children); left: 28%; top: 18%; }
-#page-home .zone-theme { --zone: var(--park-zone-theme); right: 8%; top: 13%; }
-#page-home .zone-extreme { --zone: var(--park-zone-extreme); right: 16%; bottom: 13%; }
-
-#page-home .park-route-example {
-  position: absolute;
-  z-index: 3;
-  left: 44%;
-  top: 46%;
-  width: min(245px, 42%);
-  padding: 14px 16px;
-  border-radius: 13px;
-  background: var(--park-zone-children);
-  color: #222;
-  transform: translate(-50%, -50%);
-}
-
-#page-home .park-route-example b,
-#page-home .park-route-example small { display: block; }
-#page-home .park-route-example b { font-size: 15px; }
-#page-home .park-route-example small { margin-top: 5px; font-size: 11px; line-height: 1.35; }
 
 #page-home .park-navigation-photos {
   display: grid;
@@ -3725,10 +3530,8 @@ body.portal-menu-open { overflow: hidden; }
 }
 
 .park-photo-dialog::backdrop { background: rgba(20, 38, 47, .72); backdrop-filter: blur(5px); }
-.park-photo-dialog-stage { height: min(66vh, 650px); padding: 18px; overflow: auto; background: #eaf7fc; }
+.park-photo-dialog-stage { height: min(66vh, 650px); padding: 18px; background: #eaf7fc; }
 .park-photo-dialog-stage .park-photo-slot { width: 100%; height: 100%; min-height: 0; cursor: default; transform: none; }
-.park-photo-dialog-stage .park-map-preview { width: min(100%, 825px); min-width: 0; margin-inline: auto; }
-#page-home .park-photo-dialog-stage .park-map-preview .park-map-zoom { display: none; }
 .park-photo-dialog-copy { padding: 22px 72px 24px 26px; }
 .park-photo-dialog-copy h3 { margin: 0; font-size: 22px; }
 .park-photo-dialog-copy p { margin: 7px 0 0; color: #60717a; line-height: 1.45; }
@@ -3772,22 +3575,8 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .park-chapter-head { margin-bottom: 24px; }
   #page-home .park-chapter-head h3 { font-size: 39px; }
   #page-home .park-chapter-head p { font-size: 15px; }
-  #page-home .park-zone-scheme { padding: 12px; border-radius: 24px 8px 24px 8px; }
-  #page-home .park-zone-scheme figcaption { align-items: flex-start; flex-direction: column; gap: 7px; padding: 7px 5px 0; }
-  #page-home .park-map-trigger { border-radius: 18px 7px 18px 7px; }
-  #page-home .park-map-legend { grid-template-columns: 1fr 1fr; }
-  #page-home .park-map-legend span { font-size: 10px; }
-  #page-home .park-map-zoom { right: 8px; top: 8px; width: 34px; height: 34px; font-size: 18px; }
-  #page-home .park-route-canvas { min-height: 360px; }
-  #page-home .park-zone-node { min-width: 126px; padding: 9px 10px 9px 35px; }
-  #page-home .park-zone-node i { left: 10px; width: 16px; height: 16px; border-width: 4px; }
-  #page-home .park-zone-node b { font-size: 11px; }
-  #page-home .park-zone-node small { font-size: 9px; }
-  #page-home .zone-family { left: 4%; bottom: 8%; }
-  #page-home .zone-children { left: 5%; top: 12%; }
-  #page-home .zone-theme { right: 4%; top: 8%; }
-  #page-home .zone-extreme { right: 4%; bottom: 12%; }
-  #page-home .park-route-example { left: 50%; top: 49%; width: 58%; }
+  #page-home .park-zone-system { padding: 16px; border-radius: 24px 8px 24px 8px; }
+  #page-home .park-zone-palette { grid-template-columns: 1fr; }
   #page-home .park-navigation-photos { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
   #page-home .park-navigation-photos .park-photo-slot { min-height: 185px; padding: 16px; }
   #page-home .park-navigation-photos .park-photo-slot b { font-size: 12px; }
@@ -3812,7 +3601,6 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .park-photo-slot b { font-size: 12px; }
   .park-photo-dialog { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); border-radius: 18px; }
   .park-photo-dialog-stage { height: 58vh; padding: 8px; }
-  .park-photo-dialog-stage .park-map-preview { width: auto; min-width: 760px; }
   .park-photo-dialog-copy { padding: 18px 58px 20px 18px; }
   .park-photo-dialog-copy h3 { font-size: 18px; }
   .park-photo-dialog-copy p { font-size: 13px; }
@@ -3865,7 +3653,7 @@ body.portal-menu-open { overflow: hidden; }
   clip-path: inset(0 -100vmax);
 }
 
-#page-home .park-zone-scheme,
+#page-home .park-zone-system,
 #page-home .park-photo-slot {
   background: #fff;
 }
