@@ -1443,6 +1443,18 @@ body.portal-menu-open { overflow: hidden; }
   text-transform: uppercase;
 }
 
+#page-home #approved-platform .platform-values {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  color: var(--portal-ink);
+  font: 700 clamp(26px, 2.15vw, 38px)/1 'Bebas Neue', Impact, sans-serif;
+  letter-spacing: 0;
+  list-style: none;
+  text-transform: uppercase;
+}
+
 @media (max-width: 900px) {
   #page-home #approved-platform .platform-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
