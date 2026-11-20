@@ -238,12 +238,12 @@ window.SKAZKA_BRAND_ASSETS = {
       alt: 'Утверждённые цветные округлые формы из основного брендбука',
       source: 'ФИРМЕННАЯ ГРАФИКА/ГРАФИКА_shapes.eps',
       items: [
-        { name: 'Форма 01', path: 'assets/brand/graphics/shapes/shape-01.png', background: '#E6F4FD' },
-        { name: 'Форма 02', path: 'assets/brand/graphics/shapes/shape-02.png', background: '#FFB9E9' },
-        { name: 'Форма 03', path: 'assets/brand/graphics/shapes/shape-03.png', background: '#EEE8FF' },
-        { name: 'Форма 04', path: 'assets/brand/graphics/shapes/shape-04.png', background: '#EEE8FF' },
-        { name: 'Форма 05', path: 'assets/brand/graphics/shapes/shape-05.png', background: '#FFFBF6' },
-        { name: 'Форма 06', path: 'assets/brand/graphics/shapes/shape-06.png', background: '#E6F4FD' }
+        { name: 'Форма 01', path: 'assets/brand/graphics/shapes/shape-01.svg', background: '#E6F4FD' },
+        { name: 'Форма 02', path: 'assets/brand/graphics/shapes/shape-02.svg', background: '#FFB9E9' },
+        { name: 'Форма 03', path: 'assets/brand/graphics/shapes/shape-03.svg', background: '#EEE8FF' },
+        { name: 'Форма 04', path: 'assets/brand/graphics/shapes/shape-04.svg', background: '#EEE8FF' },
+        { name: 'Форма 05', path: 'assets/brand/graphics/shapes/shape-05.svg', background: '#FFFBF6' },
+        { name: 'Форма 06', path: 'assets/brand/graphics/shapes/shape-06.svg', background: '#E6F4FD' }
       ]
     }
   }
