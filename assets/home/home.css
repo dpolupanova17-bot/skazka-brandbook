@@ -3373,6 +3373,21 @@ body.portal-menu-open { overflow: hidden; }
   line-height: 1.58;
 }
 
+#page-home .park-uniform-intro h4,
+#page-home .park-badge-copy > span {
+  display: block;
+  margin: 0 0 8px;
+  color: #238fbd;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+#page-home .park-uniform-intro h4 {
+  font-family: 'PT Root UI', Arial, sans-serif;
+}
+
 #page-home .park-zoning-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
@@ -3536,6 +3551,83 @@ body.portal-menu-open { overflow: hidden; }
 
 #page-home .park-uniform-gallery .park-photo-slot:nth-child(n + 5) { grid-column: span 4; }
 
+#page-home .park-badge-block {
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: clamp(18px, 2.4vw, 38px);
+  align-items: center;
+  margin-top: 18px;
+  padding: 14px 20px 14px 14px;
+  border: 1px solid #bcd8e3;
+  border-radius: 24px 9px 24px 9px;
+  background: #fff;
+}
+
+#page-home .park-badge-placeholder {
+  min-width: 0;
+  margin: 0;
+  padding: 10px;
+  border-radius: 17px 6px 17px 6px;
+  background: #edf7fa;
+  text-align: center;
+}
+
+#page-home .park-badge-mockup {
+  height: 70px;
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  padding: 10px;
+  border: 1px dashed #9dcbdc;
+  border-radius: 11px 4px 11px 4px;
+  background: #fff;
+}
+
+#page-home .park-badge-photo {
+  width: 35px;
+  height: 44px;
+  border-radius: 9px 3px 9px 3px;
+  background: #d7edf5;
+}
+
+#page-home .park-badge-lines {
+  display: grid;
+  gap: 6px;
+}
+
+#page-home .park-badge-lines i {
+  height: 5px;
+  border-radius: 999px;
+  background: #c3e1ec;
+}
+
+#page-home .park-badge-lines i:nth-child(2) { width: 82%; }
+#page-home .park-badge-lines i:nth-child(3) { width: 62%; background: #34b4e8; }
+
+#page-home .park-badge-placeholder figcaption {
+  margin-top: 7px;
+  color: #6a7e87;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#page-home .park-badge-copy h4 {
+  margin: 0;
+  color: #222;
+  font: 700 clamp(24px, 2.2vw, 34px)/1 'Bebas Neue', Arial, sans-serif;
+  letter-spacing: -.01em;
+}
+
+#page-home .park-badge-copy p {
+  max-width: 760px;
+  margin: 7px 0 0;
+  color: #55616b;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.45;
+}
+
 #page-home .park-communications-groups {
   display: grid;
   gap: 26px;
@@ -3648,6 +3740,27 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .park-uniform-gallery .park-photo-slot,
   #page-home .park-uniform-gallery .park-photo-slot:nth-child(n + 5) { grid-column: auto; min-height: 205px; padding: 16px; scroll-snap-align: start; }
   #page-home .park-uniform-gallery .park-photo-slot:last-child { grid-column: auto; min-height: 205px; }
+  #page-home .park-badge-block {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 20px 7px 20px 7px;
+  }
+  #page-home .park-badge-placeholder { padding: 7px; }
+  #page-home .park-badge-mockup {
+    height: 62px;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 6px;
+    padding: 8px;
+  }
+  #page-home .park-badge-photo { width: 28px; height: 36px; }
+  #page-home .park-badge-lines { gap: 4px; }
+  #page-home .park-badge-lines i { height: 4px; }
+  #page-home .park-badge-placeholder figcaption { margin-top: 5px; font-size: 8px; }
+  #page-home .park-badge-copy > span { margin-bottom: 5px; font-size: 10px; }
+  #page-home .park-badge-copy h4 { font-size: 24px; }
+  #page-home .park-badge-copy p { margin-top: 5px; font-size: 12px; line-height: 1.35; }
   #page-home .park-communications-groups { gap: 20px; }
   #page-home .park-communications-group h4 { margin-bottom: 9px; }
   #page-home .park-communications-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
