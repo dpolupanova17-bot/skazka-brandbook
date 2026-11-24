@@ -3553,11 +3553,11 @@ body.portal-menu-open { overflow: hidden; }
 
 #page-home .park-badge-block {
   display: grid;
-  grid-template-columns: 148px minmax(0, 1fr);
+  grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
   gap: clamp(18px, 2.4vw, 38px);
   align-items: center;
   margin-top: 18px;
-  padding: 14px 20px 14px 14px;
+  padding: 18px;
   border: 1px solid #bcd8e3;
   border-radius: 24px 9px 24px 9px;
   background: #fff;
@@ -3582,7 +3582,7 @@ body.portal-menu-open { overflow: hidden; }
 #page-home .park-badge-copy h4 {
   margin: 0;
   color: #222;
-  font: 700 clamp(24px, 2.2vw, 34px)/1 'Bebas Neue', Arial, sans-serif;
+  font: 700 clamp(30px, 2.6vw, 42px)/1 'Bebas Neue', Arial, sans-serif;
   letter-spacing: -.01em;
 }
 
@@ -3707,15 +3707,16 @@ body.portal-menu-open { overflow: hidden; }
   #page-home .park-uniform-gallery .park-photo-slot:nth-child(n + 5) { grid-column: auto; min-height: 205px; padding: 16px; scroll-snap-align: start; }
   #page-home .park-uniform-gallery .park-photo-slot:last-child { grid-column: auto; min-height: 205px; }
   #page-home .park-badge-block {
-    grid-template-columns: 104px minmax(0, 1fr);
-    gap: 14px;
+    grid-template-columns: 1fr;
+    gap: 16px;
     margin-top: 12px;
     padding: 12px;
     border-radius: 20px 7px 20px 7px;
   }
+  #page-home .park-badge-copy { padding: 0 4px 5px; }
   #page-home .park-badge-copy > span { margin-bottom: 5px; font-size: 10px; }
-  #page-home .park-badge-copy h4 { font-size: 24px; }
-  #page-home .park-badge-copy p { margin-top: 5px; font-size: 12px; line-height: 1.35; }
+  #page-home .park-badge-copy h4 { font-size: 32px; }
+  #page-home .park-badge-copy p { margin-top: 7px; font-size: 14px; line-height: 1.4; }
   #page-home .park-communications-groups { gap: 20px; }
   #page-home .park-communications-group h4 { margin-bottom: 9px; }
   #page-home .park-communications-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
