@@ -3645,7 +3645,16 @@ body.portal-menu-open { overflow: hidden; }
 }
 
 #page-home .park-digital-slot {
+  margin: 0;
   padding: 0;
+  cursor: default;
+}
+
+#page-home .park-digital-slot:hover {
+  border-color: #bcd8e3;
+  background: #edf7fa;
+  transform: none;
+  outline: 0;
 }
 
 #page-home .park-digital-slot:first-child {
