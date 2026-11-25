@@ -3639,6 +3639,11 @@ body.portal-menu-open { overflow: hidden; }
 
 #page-home .park-communication-slot b { max-width: 210px; }
 
+#page-home .park-digital-slot img {
+  object-fit: contain;
+  background: #eaf7fc;
+}
+
 .park-photo-dialog {
   width: min(1040px, calc(100vw - 32px));
   max-height: calc(100dvh - 32px);

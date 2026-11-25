@@ -5,7 +5,7 @@
  */
 window.SKAZKA_BRAND_ASSETS = {
   meta: {
-    version: '1.8',
+    version: '1.9',
     updated: 'auto',
     status: 'рабочая версия на согласовании'
   },
