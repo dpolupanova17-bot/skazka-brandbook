@@ -4,7 +4,7 @@
  */
 window.SKAZKA_HOME_CONTENT = {
   hero: {
-    eyebrow: 'Бренд-портал парка «Сказка»',
+    eyebrow: 'Брендбук парка «Сказка»',
     title: ['МНОГООБРАЗИЕ', 'ВПЕЧАТЛЕНИЙ'],
     cta: 'О нас',
     autoplayDelay: 6500,
