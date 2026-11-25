@@ -3566,10 +3566,27 @@ body.portal-menu-open { overflow: hidden; }
 #page-home .park-badge-placeholder {
   min-width: 0;
   margin: 0;
+  padding: 0;
   aspect-ratio: 1.44 / 1;
   overflow: hidden;
+  border: 0;
   border-radius: 17px 6px 17px 6px;
   background: #edf7fa;
+}
+
+#page-home .park-badge-preview {
+  cursor: zoom-in;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+#page-home .park-badge-preview:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(18, 49, 63, .16);
+}
+
+#page-home .park-badge-preview:focus-visible {
+  outline: 3px solid rgba(52, 180, 232, .45);
+  outline-offset: 4px;
 }
 
 #page-home .park-badge-placeholder img {
